@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinjaro Coffee</title>
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      @media (max-width: 640px) {
+        .scrollable-section {
+          max-height: 100vh;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-main-cream h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="index.html" class="text-3xl font-bold text-main-green"
+          ><img src="images/logo.png" alt="logo of Tinjaro" class="w-32"
+        /></a>
+        <div class="sm:hidden">
+          <button id="mobile-menu-button" class="text-main-green">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="hidden sm:block">
+          <a href="about.html" class="px-4 text-main-green">About Us</a>
+          <a href="products.html" class="px-4 text-main-green">Products</a>
+          <a href="contact.html" class="px-4 text-main-green">Contact Us</a>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden sm:hidden bg-main-cream py-2">
+        <a href="about.html" class="block px-4 py-2 text-main-green"
+          >About Us</a
+        >
+        <a href="products.html" class="block px-4 py-2 text-main-green"
+          >Products</a
+        >
+        <a href="contact.html" class="block px-4 py-2 text-main-green"
+          >Contact Us</a
+        >
+      </div>
+    </nav>
+
+    <section>
+      <!-- Hero Section -->
+      <section class="bg-cover bg-center">
+        <div class="flex flex-col md:flex-row">
+          <div
+            class="w-full h-[70vh] md:h-[80vh] flex items-center justify-center bg-main-cover"
+          >
+            <div id="scene-container" class="w-full h-full"></div>
+          </div>
+          <div
+            class="w-full h-[70vh] md:h-[80vh] flex items-center justify-center responsive-bg"
+          >
+            <div class="bg-black bg-opacity-50 p-4 md:p-6 rounded-md max-w-sm">
+              <h1 class="text-main-cream text-3xl md:text-4xl font-bold mb-3">
+                Tinjaro
+              </h1>
+              <p class="text-main-cream text-base md:text-lg mb-2 md:mb-3">
+                Roastering Co.
+              </p>
+              <p class="text-main-cream text-base md:text-lg mb-2 md:mb-3">
+                Ethiopian - Single Origin
+              </p>
+              <p class="text-main-cream text-base md:text-lg mb-2 md:mb-3">
+                Natural (Sun-Dried)
+              </p>
+              <p class="text-main-cream text-base md:text-lg mb-2 md:mb-3">
+                Red Bourbon, Typica, Castillo
+              </p>
+              <a
+                href="products.html"
+                class="bg-main-brown text-main-cream px-4 py-2 rounded-md text-base inline-block"
+                >Shop Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-sec-gray text-white p-4">
+        <div class="container mx-auto grid grid-cols-4 gap-4">
+          <div class="col-span-1 p-3">
+            <h2 class="font-bold text-lg mb-2">Beans</h2>
+            <p class="text-sm mb-2">
+              Learn about the different types of beans and their unique flavors.
+            </p>
+            <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
+              >Learn more</a
+            >
+          </div>
+          <div class="col-span-1 p-3">
+            <h2 class="font-bold text-lg mb-2">Gears</h2>
+            <p class="text-sm mb-2">
+              Explore the tools and equipment used in coffee making.
+            </p>
+            <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
+              >Learn more</a
+            >
+          </div>
+          <div class="col-span-1 p-3">
+            <h2 class="font-bold text-lg mb-2">Brewing</h2>
+            <p class="text-sm mb-2">
+              Master the art of coffee brewing with our detailed guides.
+            </p>
+            <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
+              >Learn more</a
+            >
+          </div>
+          <div class="col-span-1 p-3">
+            <h2 class="font-bold text-lg mb-2">Recipes</h2>
+            <p class="text-sm mb-2">
+              Discover recipes to make your perfect cup of coffee.
+            </p>
+            <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
+              >Learn more</a
+            >
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+      const container = document.getElementById("scene-container");
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setClearColor(0x000000, 0);
+      container.appendChild(renderer.domElement);
+
+      const ambientLight = new THREE.AmbientLight(0x404040, 2);
+      scene.add(ambientLight);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+      directionalLight.position.set(5, 10, 7.5).normalize();
+      scene.add(directionalLight);
+
+      const pointLight = new THREE.PointLight(0xffffff, 1.5);
+      pointLight.position.set(0, 10, 10);
+      scene.add(pointLight);
+
+      let beans = [];
+      const loader = new THREE.GLTFLoader();
+      const beanPositions = [
+        { x: 5, y: 0, z: 0 },
+        { x: -5, y: 0, z: 0 },
+        { x: 0, y: 0, z: 5 },
+      ];
+
+      beanPositions.forEach((pos, index) => {
+        loader.load(
+          "images/scene.gltf",
+          function (gltf) {
+            gltf.scene.scale.set(0.5, 0.5, 0.5);
+            gltf.scene.position.set(pos.x, pos.y, pos.z);
+            gltf.scene.visible = true;
+            gltf.scene.traverse((child) => {
+              if (child.isMesh) {
+                child.material.transparent = false;
+                child.material.opacity = 1;
+              }
+            });
+
+            const box = new THREE.Box3().setFromObject(gltf.scene);
+            const center = box.getCenter(new THREE.Vector3());
+            gltf.scene.position.sub(center);
+
+            const pivot = new THREE.Group();
+            pivot.add(gltf.scene);
+            scene.add(pivot);
+            beans.push(pivot);
+          },
+          undefined,
+          function (error) {
+            console.error("Error loading GLTF:", error);
+          }
+        );
+      });
+
+      const textureLoader = new THREE.TextureLoader();
+      let coffeeBag;
+      textureLoader.load("images/bag.png", function (texture) {
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+
+        const material = new THREE.SpriteMaterial({ map: texture });
+        coffeeBag = new THREE.Sprite(material);
+        coffeeBag.scale.set(10, 15, 1);
+        scene.add(coffeeBag);
+      });
+
+      camera.position.set(0, 0, 20);
+      camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+      function animate() {
+        requestAnimationFrame(animate);
+        const radius = 5;
+        beans.forEach((bean, index) => {
+          bean.rotation.y += 0.01;
+          bean.position.x =
+            radius * Math.cos(bean.rotation.y + index * (Math.PI / 1.5));
+          bean.position.z =
+            radius * Math.sin(bean.rotation.y + index * (Math.PI / 1.5));
+        });
+
+        if (coffeeBag) {
+          coffeeBag.position.y = Math.sin(Date.now() * 0.002) * 0.5;
+        }
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
+
+      window.addEventListener("resize", () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+    </script>
+  </body>
+</html>

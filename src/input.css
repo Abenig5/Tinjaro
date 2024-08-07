@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "flowbite";
+
+/* Custom Colors */
+.bg-main-green {
+  background-color: #606c38;
+} /* Extracted green color */
+.text-main-cream {
+  color: #e1ba80;
+} /* Extracted orange color */
+.bg-main-brown {
+  background-color: #83552b;
+}
+.bg-main-cover {
+  background-color: #241f1f;
+}
+.bg-sec-gray {
+  background-color: #111827;
+}
+
+/* Default background for mobile */
+.responsive-bg {
+  background-image: url("images/cof3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Tablet (at least 768px) */
+@media (min-width: 640px) {
+  .responsive-bg {
+    background-image: url("images/cof2.jpg");
+  }
+}
+
+/* Desktop (at least 1024px) */
+@media (min-width: 1024px) {
+  .responsive-bg {
+    background-image: url("images/cof1.jpg");
+  }
+}
+canvas {
+  display: block;
+}
+
+#scene-container {
+  width: 30%;
+  height: 400px; /* Adjust this value as needed */
+}
