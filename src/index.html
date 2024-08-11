@@ -13,9 +13,15 @@
           -webkit-overflow-scrolling: touch;
         }
       }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
-  <body class="text-main-cream h-screen">
+  <body class="text-main-cream flex flex-col min-h-screen">
     <!-- Navbar -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
       <div class="container mx-auto px-4 flex justify-between items-center">
@@ -59,17 +65,17 @@
       </div>
     </nav>
 
-    <section>
+    <main class="flex-grow">
       <!-- Hero Section -->
-      <section class="bg-cover bg-center">
-        <div class="flex flex-col md:flex-row">
+      <section class="bg-cover bg-center h-screen">
+        <div class="flex flex-col md:flex-row h-full">
           <div
-            class="w-full h-[70vh] md:h-[80vh] flex items-center justify-center bg-main-cover"
+            class="w-full md:w-1/2 h-full flex items-center justify-center bg-main-cover"
           >
             <div id="scene-container" class="w-full h-full"></div>
           </div>
           <div
-            class="w-full h-[70vh] md:h-[80vh] flex items-center justify-center responsive-bg"
+            class="w-full md:w-1/2 h-full flex items-center justify-center responsive-bg"
           >
             <div class="bg-black bg-opacity-50 p-4 md:p-6 rounded-md max-w-sm">
               <h1 class="text-main-cream text-3xl md:text-4xl font-bold mb-3">
@@ -97,9 +103,10 @@
         </div>
       </section>
 
+      <!-- Bottom Section -->
       <section class="bg-sec-gray text-white p-4">
-        <div class="container mx-auto grid grid-cols-4 gap-4">
-          <div class="col-span-1 p-3">
+        <div class="container mx-auto flex flex-wrap justify-between">
+          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
             <h2 class="font-bold text-lg mb-2">Beans</h2>
             <p class="text-sm mb-2">
               Learn about the different types of beans and their unique flavors.
@@ -108,7 +115,7 @@
               >Learn more</a
             >
           </div>
-          <div class="col-span-1 p-3">
+          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
             <h2 class="font-bold text-lg mb-2">Gears</h2>
             <p class="text-sm mb-2">
               Explore the tools and equipment used in coffee making.
@@ -117,7 +124,7 @@
               >Learn more</a
             >
           </div>
-          <div class="col-span-1 p-3">
+          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
             <h2 class="font-bold text-lg mb-2">Brewing</h2>
             <p class="text-sm mb-2">
               Master the art of coffee brewing with our detailed guides.
@@ -126,7 +133,7 @@
               >Learn more</a
             >
           </div>
-          <div class="col-span-1 p-3">
+          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
             <h2 class="font-bold text-lg mb-2">Recipes</h2>
             <p class="text-sm mb-2">
               Discover recipes to make your perfect cup of coffee.
@@ -137,7 +144,7 @@
           </div>
         </div>
       </section>
-    </section>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
