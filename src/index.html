@@ -6,22 +6,29 @@
     <title>Tinjaro Coffee</title>
     <link href="./output.css" rel="stylesheet" />
     <style>
-      @media (max-width: 640px) {
-        .scrollable-section {
-          max-height: 100vh;
-          overflow-y: auto;
-          -webkit-overflow-scrolling: touch;
-        }
+      .slideshow {
+        width: 100%;
+        border: 1px solid red;
+        height: var(--height);
       }
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      .slideshow .slideshow-container {
+        display: flex;
+        width: 100%;
+        min-width: calc(var(--width) * var(--quantity));
+        position: relative;
+      }
+      .slideshow .slideshow-container .slideshow-item {
+        width: var(--width);
+        height: var(--height);
+        position: absolute;
+        left: 100%;
+      }
+      .slideshow .slideshow-container .slideshow-item img {
+        width: 100%;
       }
     </style>
   </head>
-  <body class="text-main-cream flex flex-col min-h-screen">
+  <body class="text-main-cream flex min-h-screen">
     <!-- Navbar -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
       <div class="container mx-auto px-4 flex justify-between items-center">
@@ -65,14 +72,14 @@
       </div>
     </nav>
 
-    <main class="flex-grow">
+    <main class="flex-grow w-full">
       <!-- Hero Section -->
       <section class="bg-cover bg-center h-screen">
-        <div class="flex flex-col md:flex-row h-full">
+        <div class="flex flex-col md:flex-row h-3/4">
           <div
-            class="w-full md:w-1/2 h-full flex items-center justify-center bg-main-cover"
+            class="wall-paper-bg w-full md:w-1/2 h-full flex items-center justify-center bg-main-cover relative flex-col"
           >
-            <div id="scene-container" class="w-full h-full"></div>
+            <div id="scene-container" class="w-full h-full relative"></div>
           </div>
           <div
             class="w-full md:w-1/2 h-full flex items-center justify-center responsive-bg"
@@ -101,42 +108,190 @@
             </div>
           </div>
         </div>
+        <div class="slideshow h-1/4 bg-main-cover">
+          <div
+            class="slideshow-container"
+            style="--width: 100px; --height: 50px; --quantity: 4"
+          >
+            <!-- First slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 1"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/coffee-dringking.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+            <!-- Second slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 2"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/coffee-cup.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+            <!-- Third slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 3"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/coffee-smoking.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+            <!-- Fourth slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 4"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/cofffee-pouring.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Bottom Section -->
       <section class="bg-sec-gray text-white p-4">
-        <div class="container mx-auto flex flex-wrap justify-between">
-          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
-            <h2 class="font-bold text-lg mb-2">Beans</h2>
+        <div class="px-10 my-5 text-start">
+          <p class="text-3xl font-bold text-main-green">
+            What do you want to know ?
+          </p>
+        </div>
+        <div
+          class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
+        >
+          <div class="p-3 pr-7 text-center border-l border-gray-300">
+            <div class="flex flex-col lg:items-start items-center pl-3">
+              <img
+                src="icons/coffee-beans.png"
+                alt="Beans Icon"
+                class="mb-2 w-10"
+              />
+              <h2 class="font-bold text-lg mb-2">Typica</h2>
+            </div>
             <p class="text-sm mb-2">
-              Learn about the different types of beans and their unique flavors.
+              Typica is an Arabica coffee variety that can be grown in all
+              regions and is the prototype variety used to develop other
+              varieties.
             </p>
             <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
               >Learn more</a
             >
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
-            <h2 class="font-bold text-lg mb-2">Gears</h2>
+          <div class="p-3 pr-7 text-center border-l border-gray-300">
+            <div class="flex flex-col lg:items-start items-center pl-3">
+              <img
+                src="icons/coffee-beans3.png"
+                alt="Gears Icon"
+                class="mb-2 w-10"
+              />
+              <h2 class="font-bold text-lg mb-2">Bourbon</h2>
+            </div>
             <p class="text-sm mb-2">
-              Explore the tools and equipment used in coffee making.
+              Bourbon is an Arabica coffee with various sub-strains, much like
+              Typica, which developed from Bourbon.
             </p>
             <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
               >Learn more</a
             >
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
-            <h2 class="font-bold text-lg mb-2">Brewing</h2>
+
+          <div class="p-3 pr-7 text-center border-l border-gray-300">
+            <div class="flex flex-col lg:items-start items-center pl-3">
+              <img
+                src="icons/hot-coffee.png"
+                alt="Brewing Icon"
+                class="mb-2 w-10"
+              />
+              <h2 class="font-bold text-lg mb-2">Caturra</h2>
+            </div>
             <p class="text-sm mb-2">
-              Master the art of coffee brewing with our detailed guides.
+              This coffee strain was discovered in Brazil and named after the
+              city where it was found.
             </p>
             <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
               >Learn more</a
             >
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/4 p-3">
-            <h2 class="font-bold text-lg mb-2">Recipes</h2>
+          <div class="p-3 pr-7 text-center border-l border-gray-300">
+            <div class="flex flex-col lg:items-start items-center pl-3">
+              <img src="icons/beans.png" alt="Recipes Icon" class="mb-2 w-10" />
+              <h2 class="font-bold text-lg mb-2">Catuai</h2>
+            </div>
             <p class="text-sm mb-2">
-              Discover recipes to make your perfect cup of coffee.
+              A cross between Caturra and Mundo Novo, Catuai plants are
+              characterized by their short, dense stature.
             </p>
             <a href="#" class="text-orange-500 hover:text-orange-300 text-sm"
               >Learn more</a
@@ -149,115 +304,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="js/scripts.js"></script>
-    <script>
-      document
-        .getElementById("mobile-menu-button")
-        .addEventListener("click", function () {
-          document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
-
-      const container = document.getElementById("scene-container");
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        container.clientWidth / container.clientHeight,
-        0.1,
-        1000
-      );
-      const renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setClearColor(0x000000, 0);
-      container.appendChild(renderer.domElement);
-
-      const ambientLight = new THREE.AmbientLight(0x404040, 2);
-      scene.add(ambientLight);
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
-      directionalLight.position.set(5, 10, 7.5).normalize();
-      scene.add(directionalLight);
-
-      const pointLight = new THREE.PointLight(0xffffff, 1.5);
-      pointLight.position.set(0, 10, 10);
-      scene.add(pointLight);
-
-      let beans = [];
-      const loader = new THREE.GLTFLoader();
-      const beanPositions = [
-        { x: 5, y: 0, z: 0 },
-        { x: -5, y: 0, z: 0 },
-        { x: 0, y: 0, z: 5 },
-      ];
-
-      beanPositions.forEach((pos, index) => {
-        loader.load(
-          "images/scene.gltf",
-          function (gltf) {
-            gltf.scene.scale.set(0.5, 0.5, 0.5);
-            gltf.scene.position.set(pos.x, pos.y, pos.z);
-            gltf.scene.visible = true;
-            gltf.scene.traverse((child) => {
-              if (child.isMesh) {
-                child.material.transparent = false;
-                child.material.opacity = 1;
-              }
-            });
-
-            const box = new THREE.Box3().setFromObject(gltf.scene);
-            const center = box.getCenter(new THREE.Vector3());
-            gltf.scene.position.sub(center);
-
-            const pivot = new THREE.Group();
-            pivot.add(gltf.scene);
-            scene.add(pivot);
-            beans.push(pivot);
-          },
-          undefined,
-          function (error) {
-            console.error("Error loading GLTF:", error);
-          }
-        );
-      });
-
-      const textureLoader = new THREE.TextureLoader();
-      let coffeeBag;
-      textureLoader.load("images/bag.png", function (texture) {
-        texture.minFilter = THREE.LinearFilter;
-        texture.magFilter = THREE.LinearFilter;
-        texture.generateMipmaps = false;
-
-        const material = new THREE.SpriteMaterial({ map: texture });
-        coffeeBag = new THREE.Sprite(material);
-        coffeeBag.scale.set(10, 15, 1);
-        scene.add(coffeeBag);
-      });
-
-      camera.position.set(0, 0, 20);
-      camera.lookAt(new THREE.Vector3(0, 0, 0));
-
-      function animate() {
-        requestAnimationFrame(animate);
-        const radius = 5;
-        beans.forEach((bean, index) => {
-          bean.rotation.y += 0.01;
-          bean.position.x =
-            radius * Math.cos(bean.rotation.y + index * (Math.PI / 1.5));
-          bean.position.z =
-            radius * Math.sin(bean.rotation.y + index * (Math.PI / 1.5));
-        });
-
-        if (coffeeBag) {
-          coffeeBag.position.y = Math.sin(Date.now() * 0.002) * 0.5;
-        }
-
-        renderer.render(scene, camera);
-      }
-
-      animate();
-
-      window.addEventListener("resize", () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      });
-    </script>
   </body>
 </html>

@@ -21,11 +21,30 @@
   background-color: #111827;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-top: 78px;
+}
+
 /* Default background for mobile */
 .responsive-bg {
   background-image: url("images/cof3.jpg");
   background-size: cover;
   background-position: center;
+}
+
+@media (max-width: 640px) {
+  .scrollable-section {
+    max-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Tablet (at least 768px) */
@@ -48,4 +67,8 @@ canvas {
 #scene-container {
   width: 40%;
   height: 400px; /* Adjust this value as needed */
+}
+
+.wall-paper-bg {
+  background-image: url("images/coffee-bean-wallpaper-removebg.png");
 }
