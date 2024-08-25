@@ -7,32 +7,24 @@
     <link href="./output.css" rel="stylesheet" />
     <style>
       .slideshow {
-        position: relative;
-        overflow: hidden; /* Ensure items don't overflow the container */
+        width: 100%;
+        border: 1px solid red;
+        height: var(--height);
       }
       .slideshow .slideshow-container {
         display: flex;
-        width: calc(
-          100% * 5
-        ); /* Adjust width to accommodate all items plus gaps */
-        animation: slide 20s linear infinite;
+        width: 100%;
+        min-width: calc(var(--width) * var(--quantity));
+        position: relative;
       }
       .slideshow .slideshow-container .slideshow-item {
-        flex: 0 0 20%; /* Each item takes 20% of the container width */
-        margin-right: 5%; /* Add gap between items */
+        width: var(--width);
+        height: var(--height);
+        position: absolute;
+        left: 100%;
       }
-
-      @keyframes slide {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      .slideshow-container:hover {
-        animation-play-state: paused; /* Pause animation on hover */
+      .slideshow .slideshow-container .slideshow-item img {
+        width: 100%;
       }
     </style>
   </head>
@@ -116,8 +108,11 @@
             </div>
           </div>
         </div>
-        <div class="slideshow h-1/4 bg-main-cover flex flex-row justify-evenly">
-          <div class="slideshow-container">
+        <div class="slideshow h-1/4 bg-main-cover">
+          <div
+            class="slideshow-container"
+            style="--width: 100px; --height: 50px; --quantity: 4"
+          >
             <!-- First slideshow -->
             <div
               class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
