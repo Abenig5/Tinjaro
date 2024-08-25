@@ -21,6 +21,10 @@
   background-color: #111827;
 }
 
+main {
+  margin-top: 78px;
+}
+
 /* Default background for mobile */
 .responsive-bg {
   background-image: url("images/cof3.jpg");
@@ -48,4 +52,8 @@ canvas {
 #scene-container {
   width: 40%;
   height: 400px; /* Adjust this value as needed */
+}
+
+.wall-paper-bg {
+  background-image: url("images/coffee-bean-wallpaper.jpg");
 }
