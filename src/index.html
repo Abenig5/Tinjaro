@@ -6,18 +6,33 @@
     <title>Tinjaro Coffee</title>
     <link href="./output.css" rel="stylesheet" />
     <style>
-      @media (max-width: 640px) {
-        .scrollable-section {
-          max-height: 100vh;
-          overflow-y: auto;
-          -webkit-overflow-scrolling: touch;
+      .slideshow {
+        position: relative;
+        overflow: hidden; /* Ensure items don't overflow the container */
+      }
+      .slideshow .slideshow-container {
+        display: flex;
+        width: calc(
+          100% * 5
+        ); /* Adjust width to accommodate all items plus gaps */
+        animation: slide 20s linear infinite;
+      }
+      .slideshow .slideshow-container .slideshow-item {
+        flex: 0 0 20%; /* Each item takes 20% of the container width */
+        margin-right: 5%; /* Add gap between items */
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
         }
       }
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+
+      .slideshow-container:hover {
+        animation-play-state: paused; /* Pause animation on hover */
       }
     </style>
   </head>
@@ -68,19 +83,10 @@
     <main class="flex-grow w-full">
       <!-- Hero Section -->
       <section class="bg-cover bg-center h-screen">
-        <div class="flex flex-col md:flex-row h-full">
+        <div class="flex flex-col md:flex-row h-3/4">
           <div
-            class="wall-paper-bg w-full md:w-1/2 h-full flex items-center justify-center relative"
+            class="wall-paper-bg w-full md:w-1/2 h-full flex items-center justify-center bg-main-cover relative flex-col"
           >
-            <!-- <video
-              autoplay
-              muted
-              loop
-              class="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="videos/coffee.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video> -->
             <div id="scene-container" class="w-full h-full relative"></div>
           </div>
           <div
@@ -107,6 +113,114 @@
                 class="bg-main-brown text-main-cream px-4 py-2 rounded-md text-base inline-block"
                 >Shop Now</a
               >
+            </div>
+          </div>
+        </div>
+        <div class="slideshow h-1/4 bg-main-cover flex flex-row justify-evenly">
+          <div class="slideshow-container">
+            <!-- First slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 1"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/coffee-dringking.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+            <!-- Second slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 2"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/coffee-cup.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+            <!-- Third slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 3"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/coffee-smoking.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+            </div>
+            <!-- Fourth slideshow -->
+            <div
+              class="slideshow-item max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden relative group h-full max-h-full"
+              style="--position: 4"
+            >
+              <img
+                class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-95"
+                src="images/cofffee-pouring.jpg"
+                alt="Image of Coffee in a cup"
+              />
+              <div
+                class="absolute bottom-0 p-5 z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"
+              >
+                <a href="#">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
             </div>
           </div>
         </div>
